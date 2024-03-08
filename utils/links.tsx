@@ -14,7 +14,7 @@ export const links: TNavlinks[] = [
     },
     {
         href: '/jobs',
-        label: 'jobs',
+        label: 'all jobs',
         icon: <AppWindow />
     },
     {

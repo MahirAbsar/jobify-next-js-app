@@ -1,6 +1,33 @@
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "./ui/button";
+import { AlignLeft } from "lucide-react";
+import { links } from "@/utils/links";
+import Link from "next/link";
+
 const LinksDropdown = () => {
   return (
-    <div>linksDropdown</div>
-  )
-}
-export default LinksDropdown; 
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+          <AlignLeft />
+          <span className="sr-only">Toggle links</span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-52" align="start" alignOffset={25}>
+        {links.map((link) => {
+          return (
+            <DropdownMenuItem key={link.href}>
+              <Link href={link.href} className="flex items-center gap-2">
+                {link.icon} <span className="capitalize">{link.label}</span>
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+export default LinksDropdown;
