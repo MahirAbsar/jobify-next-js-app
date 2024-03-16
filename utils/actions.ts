@@ -1,7 +1,7 @@
 "use server"
 
 import { redirect } from "next/navigation";
-import { JobType, createAndEditJobSchema } from "./types";
+import { CreateAndEditJobType, JobType, createAndEditJobSchema } from "./types";
 import { auth } from "@clerk/nextjs";
 import prisma from "./db";
 
@@ -11,7 +11,7 @@ function authenticateAndRedirect() {
     return userId
 }
 
-export async function createJobAction(values: JobType):Promise<JobType | null> {
+export async function createJobAction(values: CreateAndEditJobType):Promise<JobType | null> {
     const userId = authenticateAndRedirect();
     try {
         createAndEditJobSchema.parse(values);
