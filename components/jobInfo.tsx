@@ -1,6 +1,9 @@
-const JobInfo = () => {
+const JobInfo = ({ icon, text }: { icon: React.ReactNode; text: string }) => {
   return (
-    <h1 className="text-4xl">JobInfo</h1>
-  )
-}
-export default JobInfo
+    <div className="flex gap-x-2 align-center">
+      {icon}
+      {text}
+    </div>
+  );
+};
+export default JobInfo;
