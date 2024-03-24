@@ -2,7 +2,7 @@
 
 import { getStatsAction } from "@/utils/actions";
 import { useQuery } from "@tanstack/react-query";
-import StatCard from "./StatCard";
+import StatCard from "./statCard";
 
 const StatsContainer = () => {
   const { data } = useQuery({
@@ -15,4 +15,10 @@ const StatsContainer = () => {
     <StatCard title="declined jobs" value={data?.declined || 0}/>
   </div>;
 };
+
+
+export const StatsLoadingContainer = () => {
+  
+}
+
 export default StatsContainer;

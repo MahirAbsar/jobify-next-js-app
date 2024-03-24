@@ -195,7 +195,7 @@ export async function getChartsDataAction() {
       },
     });
     const applicationPerMonth = chartData.reduce((acc, curr) => {
-      const date = dayjs(curr.createdAt).format("MMM DD");
+      const date = dayjs(curr.createdAt).format("MMM YY");
 
       const existingEntry = acc.find((entry) => entry.date === date);
       if (existingEntry) {

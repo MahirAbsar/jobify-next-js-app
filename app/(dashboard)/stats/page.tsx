@@ -1,5 +1,5 @@
-import ChartsContainer from "@/components/ChartsContainer";
-import StatsContainer from "@/components/StatsContainer";
+import ChartsContainer from "@/components/chartsContainer";
+import StatsContainer from "@/components/statsContainer";
 import { getChartsDataAction, getStatsAction } from "@/utils/actions";
 import {
   HydrationBoundary,
